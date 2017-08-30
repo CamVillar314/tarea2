@@ -28,7 +28,13 @@ public class Polinomios{
 		return productoArrays;
 
 	}
-
+	
+	public static int[] d(int[] polin1, int[] polin2, int f){
+	
+		
+	}
+	
+	
 
 	public static void main(String[] args) {
 
@@ -51,6 +57,21 @@ public class Polinomios{
 			Scanner b1 = new Scanner(System.in);
 			int b = b1.nextInt();
 			pol2[j] = b;
+		}
+		
+		int[] aprim = new int[(n+1)/2];
+		int [] a2prim = new int[(n+1)/2];
+		int[] bprim = new int[(n+1)/2];
+		int[] b2prim = new int[(n+1)/2];
+		for (int i = 0; i < (n+1)/2; ++i){
+			
+			aprim[i] = poli1[i];
+			bprim[i] = poli2[i];
+		}
+		for(int j = (n+1)/2; j < (n+1); ++j){
+		
+			a2prim[j] = poli1[j];
+			b2prim[j] = poli2[j];
 		}
 
 
