@@ -15,12 +15,12 @@ public class Polinomios{
 		return sumaArrays;
 	}
 
-	public static int[] resta(int[] a, int[] b, int c){
+	public static int[] resta(int[] a, int[] b, int[] z, int c){
 
 		int[] restaArrays = new int[c];
 		for (int k = 0; k < c; ++k) {
 			
-			restaArrays[k] = a[k] + b[k];
+			restaArrays[k] = a[k] - b[k] - z[k];
 		}
 		return restaArrays;
 	}
@@ -49,22 +49,26 @@ public class Polinomios{
 		d2 = suma(polin3,polin4,g);
 		int[] d = new int[2*g-2];
 		d = producto(d1,d2,g);
-
+		
+		int largprod = 2*g-2
 		//Calcula el polinomio e
-		int[] e = new int[2*g-2];
+		int[] e = new int[largprod];
 		e = producto(polin1,polin3,g);
 
 		//Calcula el polinomio f
-		int[] f = new int[2*g-2];
+		int[] f = new int[largprod];
 		f = producto(polin2,polin4,g);
+		
+		int[] w = new int[largprod];
+		w = resta(d, e, f, largprod);
 
 		//Calcula el polinomio resultante
-		int[] c = new int[4*g];
+		int[] c = new int[4*g-1];
 		for (i = 0; i < 2*g-2; ++i) {
 			
 			c[i] = e[i];
 		}
-		for (j = 2*g-2; ; ) {
+		for (j = 2*g-2; j < ; ) {
 			
 		}
 
