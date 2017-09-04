@@ -2,8 +2,7 @@ import java.io.*;
 import java.util.Scanner;
 import java.lang.*;
 
-public class Polinomios{
-
+public class Polinomios2{
 
 	public static int[] suma(int[] a, int[] b, int c){
 		
@@ -38,85 +37,55 @@ public class Polinomios{
 		return productoArrays;
 
 	}
-	
-	public static int[] resultado(int[] polin1, int[] polin2, int[] polin3, int[] polin4, int g){
 
-
-		//Primero se calcula el polinomio d
-		int[] d1 = new int[g];
-		d1 = suma(polin1,polin2,g);
-		int[] d2 = new int[g];
-		d2 = suma(polin3,polin4,g);
-		int[] d = new int[2*g-2];
-		d = producto(d1,d2,g);
-		
-		int largprod = 2*g-2
-		//Calcula el polinomio e
-		int[] e = new int[largprod];
-		e = producto(polin1,polin3,g);
-
-		//Calcula el polinomio f
-		int[] f = new int[largprod];
-		f = producto(polin2,polin4,g);
-		
-		int[] w = new int[largprod];
-		w = resta(d, e, f, largprod);
-
-		//Calcula el polinomio resultante
-		int[] c = new int[4*g-1];
-		for (i = 0; i < 2*g-2; ++i) {
-			
-			c[i] = e[i];
-		}
-		for (j = 2*g-2; j < ; ) {
-			
-		}
-
-
-
-	}
 
 	public static void main(String[] args) {
 
-
 		Scanner m = new Scanner(System.in);
 		int n = m.nextInt();
-		int[] pol1 = new int[n+1];
-		int[] pol2 = new int[n+1];
+		int tamArr;
+		if ((n+1)%2 == 0) {
+			
+			tamArr = n+1;			
 
-		for (int i = 0; i < n+1 ; ++i) {
+		}
+		else {
+			tamArr = n+2;
+		}
 
+		int[] pol1 = new int[tamArr];
+		int[] pol2 = new int[tamArr];
+
+		for (int i = 0; i < tamArr ; ++i) {
+
+			
 			Scanner a1 = new Scanner(System.in);
 			int a = a1.nextInt();
 			pol1[i] = a;
 
-		}
-
-		for (int j = 0 ; j < n+1 ; ++j) {
-
 			Scanner b1 = new Scanner(System.in);
 			int b = b1.nextInt();
-			pol2[j] = b;
-		}
-		int ble = (n+1)/2;
+			pol2[i] = b;
 
-		int[] aprim = new int[ble];
-		int [] a2prim = new int[ble];
-		int[] bprim = new int[ble];
-		int[] b2prim = new int[ble];
-		for (int i = 0; i < ble; ++i){
+		}
+
+		int tamSub = tamArr/2;
+
+		int[] aprim = new int[tamArr];
+		int [] a2prim = new int[tamArr];
+		int[] bprim = new int[tamArr];
+		int[] b2prim = new int[tamArr];
+		for (int i = 0; i < tamArr; ++i){
 			
 			aprim[i] = pol1[i];
 			bprim[i] = pol2[i];
 		}
-		for(int j = ble; j < (n+1); ++j){
+		for(int j = tamArr; j < (n+1); ++j){
 		
 			a2prim[j] = pol1[j];
 			b2prim[j] = pol2[j];
 		}
 
 
-		System.out.println(resultado(aprim,a2prim,bprim,b2prim,ble));
-		
 	}
 }
