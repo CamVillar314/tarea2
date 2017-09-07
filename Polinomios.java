@@ -30,14 +30,7 @@ public class Polinomios{
 	public static int[] producto(int[] arreglo1, int[] arreglo2, int tamArreglo){
 		
 		int[] productoArrays = new int[2*tamArreglo-2];
-		for (int l = 0; l < tamArreglo; ++l){
-			for (int m = 0; m < tamArreglo; ++m){
-				
-				productoArrays[l + m] = arreglo1[l] * arreglo2[m];
-			}
-			
-		}
-		return productoArrays;
+		//Hacer la forma recursiva acá
 
 	}
 
